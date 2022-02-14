@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Anasayfa | CSS Ödev 1 </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Site Başlığı -->
+    <header>
+        <table>
+            <tr>
+                <td class="tel"><a href="tel:08504566666">0850 456 66 66 |</a></td>
+                <td class="tel"><strong>Destek Hattı : 09:00 - 18:00</strong></td>
+                <td class="kargo"><strong>12:00'a Kadar Gelen İstanbul İçi Siparişler Aynı Gün Teslim!</strong></td>
+            </tr>
+        </table>
+    </header>
+    <!-- Navigasyon Menüsü -->
+    <nav>
+        <a class="menu" href="index.html">Anasayfa |</a>
+        <a class="menu" href="urunler.html">Ürünlerimiz |</a>
+        <a class="menu" href="hakkimizda.html">Hakkımızda</a>
+    </nav>
+    <hr>
+    <!-- Slider İçeriği -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img width="1000" height="400" src="https://images.petlebi.com/v7/ptlb/up/gallery/toy-poodle-2026.jpg">
+            <div class="text">Zinga | Köpek</div>
+          </div>
+        
+          <div class="mySlides fade">
+            <img width="1000" height="400" src="https://www.spectrummama.com/upload/content/content_2021-09-10_12-49-27.jpg">
+            <div class="text">Zinga | Kedi</div>
+          </div>
+        
+          <div class="mySlides fade">
+            <img width="1000" height="400" src="https://www.diyadinnet.com/d/ruya/ruyada-kus-gormek-ne-anlama-gelir-6686.jpg">
+            <div class="text">Zinga | Kuş</div>
+          </div>
+
+          <div class="mySlides fade">
+            <img width="1000" height="400" src="https://img.bilgihanem.com/wp-content/uploads/2016/01/hamsterlar-hakkinda-bilgiler-1024x597.jpg">
+            <div class="text">Zinga | Kemirgen</div>
+          </div>
+
+          <div class="mySlides fade">
+            <img width="1000" height="400" src="https://patiliyo.com/Upload/Contents/2a8bd9ad-9677-4d0a-861b-27f79b9e8381_0.jpeg">
+            <div class="text">Zinga | Sürüngen</div>
+          </div>
+
+          <div class="mySlides fade">
+            <img width="1000" height="400" src="https://www.hepsiburada.com/kesfet/wp-content/uploads/2021/01/iStock-1058824986.jpg">
+            <div class="text">Zinga | Balık</div>
+          </div>
+        
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+        
+    <hr>
+    <footer>
+        <p>&#169 | 2022 Zinga Pet Shop Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+    </script>
+
+</body>
+</html>
